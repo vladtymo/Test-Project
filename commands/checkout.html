@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
+<body>
+    <h1><div align="center"><code>git-checkout</code><b><font color="red">- git-checkout - Switch branches or restore working tree files</font></b></div></h1>
+    <h2><div align="center">SYNOPSIS</div></h2>
+    <code> 
+        git checkout [-q] [-f] [-m] [<branch>]
+        git checkout [-q] [-f] [-m] --detach [<branch>]
+        git checkout [-q] [-f] [-m] [--detach] <commit>
+        git checkout [-q] [-f] [-m] [[-b|-B|--orphan] <new_branch>] [<start_point>]
+        git checkout [-p|--patch] [<tree-ish>] [--] [<paths>…​]
+    </code>
+    <h3><div align="center"><b><font color="green">DESCRIPTION</font></b></div></h3>
+    <p>      
+        Updates files in the working tree to match the version in the index or the specified tree. If no paths are given, git checkout will also update HEAD to set the specified branch as the current branch.
+        git checkout <branch> to prepare for working on <branch>, switch to it by updating the index and the files in the working tree, and by pointing HEAD at the branch. Local modifications to the files in the working tree are kept, so that they can be committed to the <branch>.
+        If <branch> is not found but there does exist a tracking branch in exactly one remote (call it <remote>) with a matching name, treat as equivalent to
+        $ git checkout -b <branch> --track <remote>/<branch>. You could omit <branch>, in which case the command degenerates to "check out the current branch", which is a glorified no-op with a rather expensive side-effects to show only the tracking information, if exists, for the current branch.
+        git checkout -b|-B <new_branch> [<start point>] Specifying -b causes a new branch to be created as if git-branch[1] were called and then checked out. In this case you can use the --track or --no-track options, which will be passed to git branch. As a convenience, --track without -b implies branch creation; see the description of --track below.
+        If -B is given, <new_branch> is created if it doesn’t exist; otherwise, it is reset. This is the transactional equivalent of
+        $ git branch -f <branch> [<start point>] $ git checkout <branch> that is to say, the branch is not reset/created unless "git checkout" is successful
+    </p>
+</body>
+</html>
