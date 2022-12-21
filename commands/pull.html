@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pull</title>
+</head>
+<body>
+ <h1><code>git-pull</code> - Fetch from and integrate with another repository or a local branch</h1>
+ <h2>SYNOPSIS</h2>
+ <code>
+    git pull [options] [repository [refspec…]]
+</code>
+<h2>DESCRIPTION</h2>
+<p>
+    Incorporates changes from a remote repository into the current branch. If the current branch is behind the remote, 
+    then by default it will fast-forward the current branch to match the remote. If the current branch and the remote 
+    have diverged, the user needs to specify how to reconcile the divergent branches with --rebase or --no-rebase (or 
+    the corresponding configuration option in pull.rebase). More precisely, git pull runs git fetch with the given 
+    parameters and then depending on configuration options or command line flags, will call either git rebase or git 
+    merge to reconcile diverging branches. <repository> should be the name of a remote repository as passed to git-
+    fetch[1]. <refspec> can name an arbitrary remote ref (for example, the name of a tag) or even a collection of refs 
+    with corresponding remote-tracking branches (e.g., refs/heads/*:refs/remotes/origin/*), but usually it is the name 
+    of a branch in the remote repository.
+
+    <h2>Git Pull Examples</h2>
+<p>
+        The following examples demonstrate how to use git pull in common scenarios:
+        1. Default Behavior
+        2. Git pull on remotes
+        3. Git pull rebase instead of merge
+</p>
+</body>
+</html>
